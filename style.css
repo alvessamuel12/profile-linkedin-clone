@@ -1,8 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+
+.nav-bar {
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding-left: 3vw;
+    padding-right: 1vw;
+}
+
+#nav-profile-picture {
+    border-radius: 50%;
+    border: none;
+    
+}
 
 #icons-container {
     display: inline;
+    align-items: center;
 }
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    box-sizing: content-box;
+    text-align: center;
+    font-size: smaller;
+    position: relative;
+    margin: 0.5vh 2vw;
+    line-height: 1.5;
+}
+
+label {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 
 #logo {
     width: 34px;
@@ -10,5 +53,5 @@
 }
 
 .icon {
-    width: 20px;
+    width: 1.6vw;
 }
