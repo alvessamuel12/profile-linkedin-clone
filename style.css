@@ -1,17 +1,29 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+button{
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 body {
     background-color: #e5e5e5;
+    overflow-x: hidden;
+    font-family: 'Rambla', 'Times New Roman', Times, serif;
 }
 
 
 
 /* ========= NAV BAR =============================== */
-
 
 header {
     margin-top: 0;
@@ -44,25 +56,36 @@ header {
 }
 
 .icon {
+    min-width: 24px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-direction: column-reverse;
     box-sizing: content-box;
     text-align: center;
-    font-size: smaller;
+    font-size: 1em;
     position: relative;
     margin: 0.5vh 2vw;
     line-height: 1.5;
-    width: 1.6vw;
+    width: 30px;
 }
 
 label {
+    font-family: 'Ropa Sans', 'Times New Roman', Times, serif;
     display: inline-block;
     white-space: nowrap;
     cursor: pointer;
 }
 
+@media (max-width: 700px) {
+    .icon {
+        width: 18px;
+    }
+    label {
+        font-size: 0.6em;
+    }
+
+}
 
 .left-container {
     align-items: center;
@@ -77,6 +100,7 @@ label {
 
 #search-container {
     background-color: #EEF3F7;
+    display: flex;
     box-sizing: content-box;
     border-radius: 4px;
     align-items: center;
@@ -87,6 +111,9 @@ label {
 }
 
 #search-field {
+    margin-left: .8em;
+    font-size: 1em;
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
     box-shadow: 0 0 0 0;
     border: 0 none;
     background-color: #EEF3F7;
@@ -94,34 +121,30 @@ label {
     outline: 0;
 }
 
-#search-container  ::selection {
-    border: 1px solid black;
-}
-
-
-
 
 /* =========== CONTEÚDO PRINCIPAL DA PÁGINA ============================================ */
 
 
 
 main {
-    display: block;
     padding-top: 10vh;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
+    box-sizing: border-box;
 }
 
 section {
     width: min(90vw, 768px);
     background-color: #FFFFFF;
     margin: auto;
+    box-sizing: border-box;
 }
 
 section#profile-informations {
     display: flex;
+    position: relative;
     flex-direction: column;
     margin-top: 5vh;
     margin-bottom: 5vh;
@@ -142,14 +165,25 @@ section#profile-informations {
 
 #profile-picture {
     border-radius: 50%;
-    border: .5vw solid #FFFFFF;
+    /* border: .5vw solid #FFFFFF; */
     /* width: 152px; */
-    width: 20%;
+    width: 16%;
+    position: absolute;
+    
+    min-width: 120px;
+    left: 2vw;
+    top: 100px;
+    /* transform: translateY(80%); */
+}
+
+.profile-information {
     position: relative;
-    transform: translateY(-70%);
 }
 
 #profile-informations-content {
+    margin-top: 50px;
+    box-sizing: border-box;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -157,25 +191,44 @@ section#profile-informations {
     padding-bottom: 6vh;
 }
 
+.title, .description, .location {
+    box-sizing: content-box;
+    margin: 0.2vh 0;
+}
+
 .title {
+    font-size: 1.1em;
+    margin-top: 3vh;
     position: relative;
     transform: translateY(-20%);
 }
 
-.title, .description, .location {
-    box-sizing: content-box;
+.description {
+    font-weight: 400;
+    font: 1em;
+}
+
+.location {
+    font-size: .8em;
+    font-weight: 400;
+    color: #666666;
+}
+
+.buttons {
+    margin-top: 2vh;
 }
 
 button {
     border: none;
-    border-radius: 10px;
-    padding: 0 12px;
+    border-radius: 12px;
+    padding: 4px 12px;
     background-color: #FFFFFF;
     margin-right: 2vw;
     border: 1px solid #666666;
 }
 
 .buttons :first-child {
+    border: none;
     background-color: #0B65C2;
     color: #FFFFFF;
 }
@@ -190,10 +243,19 @@ section#especified-information {
 }
 
 #experience {
+    box-sizing: border-box;
     border-bottom: 1px #666666;
 }
 
+.bottom-line {
+    height: 1px;
+    width: 100%;
+    background:#666666;
+    margin-bottom: 4vh;
+}
+
 .image-container {
+    cursor: pointer;
     box-sizing: content-box;
     display: inline;
 }
@@ -205,8 +267,11 @@ section#especified-information {
 
 .experience-content, .academic-content {
     display: flex;
+    width: 100%;
     margin: 3vw 0;
     align-items: center;
 }
 
-
+h2 {
+    font-size: 1.2em;
+}
