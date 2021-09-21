@@ -77,15 +77,6 @@ label {
     cursor: pointer;
 }
 
-@media (max-width: 700px) {
-    .icon {
-        width: 18px;
-    }
-    label {
-        font-size: 0.6em;
-    }
-
-}
 
 .left-container {
     align-items: center;
@@ -127,7 +118,7 @@ label {
 
 
 main {
-    padding-top: 10vh;
+    padding-top: 38px;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -143,6 +134,7 @@ section {
 }
 
 section#profile-informations {
+    margin-top: 58px;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -219,6 +211,7 @@ section#profile-informations {
 }
 
 button {
+    box-sizing: border-box;
     border: none;
     border-radius: 12px;
     padding: 4px 12px;
@@ -227,12 +220,25 @@ button {
     border: 1px solid #666666;
 }
 
-.buttons :first-child {
+.buttons :hover {
+    transition: .1s;
+    background-color: #b6b6b6a2;
+    margin: -2px;
+    margin-right: 2vw;
+    border: 2px solid #666666;
+}
+
+#interesting {
     border: none;
     background-color: #0B65C2;
     color: #FFFFFF;
 }
 
+#interesting :hover {
+    transition: .1s;
+    background-color: #0027a7f8;
+    border: none;
+}
 
 /* ===== INFORMAÇÕES DE HARD-SKILLS =================== */
 
@@ -274,4 +280,34 @@ section#especified-information {
 
 h2 {
     font-size: 1.2em;
+}
+
+
+
+@media (max-width: 700px) {
+    .icon {
+        width: 18px;
+    }
+    label {
+        font-size: 0.6em;
+    }
+
+}
+
+@media (max-width: 600px) {
+    input {
+        display: none;
+    }
+
+    #search-container {
+        background-color: #FFFFFF;
+    }
+
+    #search-container label {
+        content: "Pesquisar";
+    }
+
+    .nav-bar {
+        justify-content: center;
+    }
 }
